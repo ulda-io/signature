@@ -1,6 +1,6 @@
 {
-  "name": "ulda-sign",
-  "version": "1.0.1",
+  "name": "@zeroam/ulda-sign",
+  "version": "1.0.3",
   "description": "Ulda Sign - Advanced cryptographic signature library with ladder-based verification",
   "main": "./dist/ulda-sign.cjs.js",
   "module": "./dist/ulda-sign.es.js",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iammarguuss/occulta.git"
+    "url": "git+https://github.com/ulda-io/signature.git"
   },
   "keywords": [
     "cryptography",

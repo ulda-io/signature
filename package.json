@@ -1,6 +1,6 @@
 {
   "name": "ulda-sign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ulda Sign - Advanced cryptographic signature library with ladder-based verification",
   "main": "./dist/ulda-sign.cjs.js",
   "module": "./dist/ulda-sign.es.js",
@@ -48,9 +48,9 @@
   "author": "Mark Shaposhnik",
   "license": "ULDA-NC Headers (v1.0)",
   "bugs": {
-    "url": "https://github.com/iammarguuss/occulta/issues"
+    "url": "https://github.com/ulda-io/signature"
   },
-  "homepage": "https://github.com/iammarguuss/occulta#readme",
+  "homepage": "https://github.com/ulda-io/signature#readme",
   "devDependencies": {
     "typescript": "^5.9.2",
     "vite": "^5.0.0",

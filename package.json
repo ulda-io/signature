@@ -1,0 +1,65 @@
+{
+  "name": "ulda-sign",
+  "version": "1.0.0",
+  "description": "Ulda Sign - Advanced cryptographic signature library with ladder-based verification",
+  "main": "./dist/ulda-sign.cjs.js",
+  "module": "./dist/ulda-sign.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ulda-sign.es.js",
+      "require": "./dist/ulda-sign.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./umd": {
+      "import": "./dist/ulda-sign.umd.js",
+      "require": "./dist/ulda-sign.umd.js"
+    },
+    "./iife": {
+      "import": "./dist/ulda-sign.iife.js",
+      "require": "./dist/ulda-sign.iife.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+    "dev": "vite build --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammarguuss/occulta.git"
+  },
+  "keywords": [
+    "cryptography",
+    "signature",
+    "verification",
+    "ladder",
+    "hash",
+    "security",
+    "typescript",
+    "ulda"
+  ],
+  "author": "Mark Shaposhnik",
+  "license": "ULDA-NC Headers (v1.0)",
+  "bugs": {
+    "url": "https://github.com/iammarguuss/occulta/issues"
+  },
+  "homepage": "https://github.com/iammarguuss/occulta#readme",
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

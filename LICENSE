@@ -1,0 +1,163 @@
+# ULDA-NC Headers (v1.0)
+This sheet provides multiple language-specific header variants compatible with Section 3.1 of ULDA-NC-1.0.
+Pick ONE per file type. Prefer the SPDX one-liner when your tooling supports it.
+
+## Canonical Options (use one)
+**A) SPDX (preferred):**
+```
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+*Alt for custom SPDX registries:*
+```
+// SPDX-License-Identifier: LicenseRef-ULDA-NC-1.0
+```
+
+**B) Two short lines:**
+```
+// Licensed under ULDA-NC-1.0 — see LICENSE
+// © 2025 Mark Shaposhnik / ZeroAM
+```
+
+**C) Full minimal (multi-line allowed as appropriate):**
+```
+// This file is licensed under ULDA-NC-1.0 — see LICENSE.
+// © 2025 Mark Shaposhnik / Shaposhnik Oam & Services IT (d/b/a ZeroAM)
+```
+
+**Modification mark (when distributing modified code):**
+```
+// This file/software has been modified by ACME Corp on 2025-10-01.
+```
+
+---
+
+## Language-Specific Examples
+
+### C / C++ / Java / C# / Go (line comments)
+```
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### C / C++ / Java / C# / Go (block)
+```
+/*
+ * Licensed under ULDA-NC-1.0 — see LICENSE
+ * © 2025 Mark Shaposhnik / ZeroAM
+ */
+```
+
+### JavaScript / TypeScript
+```
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Python
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Bash / Shell
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Rust
+```
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Swift / Kotlin
+```
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Ruby
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### PHP
+```php
+<?php
+// SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### HTML
+```html
+<!-- SPDX-License-Identifier: ULDA-NC-1.0 -->
+```
+
+### CSS
+```css
+/* SPDX-License-Identifier: ULDA-NC-1.0 */
+```
+
+### XML
+```xml
+<!-- SPDX-License-Identifier: ULDA-NC-1.0 -->
+```
+
+### SQL
+```sql
+-- SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### PowerShell
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### Windows Batch (.bat)
+```
+:: SPDX-License-Identifier: ULDA-NC-1.0
+REM Alternatively: REM SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### MATLAB / Octave
+```
+% SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### R
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### LaTeX
+```
+% SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### YAML / TOML
+```
+# SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+### INI
+```
+; SPDX-License-Identifier: ULDA-NC-1.0
+```
+
+---
+
+## Manifests Without Comments (e.g., JSON)
+Plain JSON does not support comments. Suggested approaches:
+- put the license file in the repo (e.g., LICENSE-ULDA-NC-1.0.txt) and set
+  "license": "SEE LICENSE IN LICENSE-ULDA-NC-1.0.txt" in package.json;
+- or include a short note in README and in your build tooling.
+
+**package.json example:**
+```json
+{
+  "name": "@zeroam/yourpkg",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE-ULDA-NC-1.0.txt"
+}
+```
+
+**NOTICE example for binaries:**
+```
+This product includes components licensed under ULDA-NC-1.0.
+© 2025 Mark Shaposhnik / Shaposhnik Oam & Services IT (d/b/a ZeroAM)
+See the LICENSE-ULDA-NC-1.0.txt file for terms.
+```

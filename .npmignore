@@ -1,0 +1,40 @@
+# Source files
+src/
+*.ts
+tsconfig.json
+vite.config.ts
+
+# Development files
+test/
+tests/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Development dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.*
+
+# Build tools
+.git/
+.gitignore

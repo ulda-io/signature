@@ -1,6 +1,6 @@
 {
   "name": "@zeroam/ulda-sign",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ulda Sign - Advanced cryptographic signature library with ladder-based verification",
   "main": "./dist/ulda-sign.cjs.js",
   "module": "./dist/ulda-sign.es.js",
@@ -46,7 +46,7 @@
     "ulda"
   ],
   "author": "Mark Shaposhnik",
-  "license": "ULDA-NC Headers (v1.0)",
+  "license": "ULDA-NC-1.0",
   "bugs": {
     "url": "https://github.com/ulda-io/signature"
   },

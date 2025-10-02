@@ -1,6 +1,6 @@
 {
   "name": "@zeroam/ulda-sign",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Ulda Sign - Advanced cryptographic signature library with ladder-based verification",
   "main": "./dist/ulda-sign.cjs.js",
   "module": "./dist/ulda-sign.es.js",

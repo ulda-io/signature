@@ -1,3 +1,5 @@
+// Licensed under ULDA-NC-1.0 — see LICENSE
+// © 2025 Mark Shaposhnik / ZeroAM
 import type {
   GlobalConfig,
   Encoder,

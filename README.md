@@ -1,67 +1,73 @@
 # Ulda Sign
 
-Advanced cryptographic signature library with ladder-based verification system.
+Advanced cryptographic signature library with a ladder-based verification system.
 
 ## Features
 
-- 🔐 **Advanced Cryptography**: Multiple hash algorithms support (SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, SHA3-512, BLAKE3, WHIRLPOOL)
-- 🪜 **Ladder-based Verification**: Two verification modes (S and X) for different use cases
-- 🔧 **Custom Hashers**: Support for external hash functions via CDN or custom implementations
-- 📦 **Multiple Formats**: Support for hex, base64, and binary data formats
+- 🔐 **Advanced cryptography**: Multiple hash algorithms (SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, SHA3-512, BLAKE3, WHIRLPOOL)
+- 🪜 **Ladder verification**: Two verification modes (S and X) for different use cases
+- 🔧 **Pluggable hashers**: External/custom hash functions via CDN or your own implementation
+- 📦 **Multiple formats**: Hex, Base64, and raw bytes
 - 🌐 **Cross-platform**: Works in Node.js and browsers
-- 📝 **TypeScript**: Full TypeScript support with comprehensive type definitions
+- 📝 **TypeScript**: Full type definitions
 
 ## Installation
 
 ```bash
-npm install ulda-sign
+npm install @zeroam/ulda-sign
+# or
+pnpm add @zeroam/ulda-sign
+# or
+yarn add @zeroam/ulda-sign
 ```
 
-## Usage
+## Getting Started
 
-### Basic Usage
+Basic end-to-end flow: create an origin, sign it twice (step-up the origin between signatures), and verify the pair.
 
 ```typescript
-import UldaSign from 'ulda-sign';
+import UldaSign from '@zeroam/ulda-sign';
 
-// Create a new instance
+// Initialize
 const ulda = new UldaSign();
 
-// Generate a new origin package
-const origin = ulda.New();
+// 1) Create the first origin and sign it
+const origin1 = ulda.New();
+const signature1 = await ulda.sign(origin1);
 
-// Sign the origin
-const signature = await ulda.sign(origin);
+// 2) Step up the origin and sign again
+const origin2 = ulda.stepUp(origin1);
+const signature2 = await ulda.sign(origin2);
 
-// Verify two signatures
+// 3) Verify two signatures (signature1 vs signature2)
 const isValid = await ulda.verify(signature1, signature2);
+console.log('valid:', isValid);
 ```
 
-### Advanced Configuration
+
+
+## Advanced Configuration
 
 ```typescript
-import UldaSign from 'ulda-sign';
+import UldaSign from '@zeroam/ulda-sign';
 
 const ulda = new UldaSign({
-  version: "1",
-  fmt: { export: "hex" }, // or "base64", "bytes"
+  version: '1',
+  fmt: { export: 'hex' }, // or 'base64', 'bytes'
   sign: {
-    N: 5,              // Number of blocks
-    mode: "S",         // Verification mode: "S" or "X"
-    hash: "SHA-256",   // Hash algorithm
-    originSize: 256,   // Origin size in bits
-    pack: "simpleSig"  // Packing method
+    N: 5,              // number of blocks
+    mode: 'S',         // verification mode: 'S' or 'X'
+    hash: 'SHA-256',   // hash algorithm
+    originSize: 256,   // origin size in bits
+    pack: 'simpleSig'  // packing method
   },
   externalHashers: {
-    "custom-hash": {
-      fn: async (data: Uint8Array) => {
-        // Your custom hash implementation
-        return customHashFunction(data);
-      },
-      output: "hex",    // Output format
-      size: 256,        // Hash size in bits
-      cdn: null,        // CDN URL for external library
-      ready: true       // Whether the hasher is ready
+    'custom-hash': {
+      fn: async (data: Uint8Array) => customHashFunction(data),
+      output: 'hex',
+      size: 256,
+      cdn: null,
+      ready: true
     }
   }
 });
@@ -71,28 +77,19 @@ const ulda = new UldaSign({
 
 #### Mode S (Sequential)
 ```typescript
-const ulda = new UldaSign({
-  sign: { mode: "S" }
-});
+const ulda = new UldaSign({ sign: { mode: 'S' } });
 ```
 
 #### Mode X (Cross)
 ```typescript
-const ulda = new UldaSign({
-  sign: { mode: "X" }
-});
+const ulda = new UldaSign({ sign: { mode: 'X' } });
 ```
 
-### Step Up Process
+### Step-Up Process Only
 
 ```typescript
-// Create initial origin
 const origin = ulda.New();
-
-// Step up to next version
 const nextOrigin = ulda.stepUp(origin);
-
-// Sign the new version
 const signature = await ulda.sign(nextOrigin);
 ```
 
@@ -138,26 +135,43 @@ interface UldaSignConfig {
 }
 ```
 
-## Browser Usage
+## Browser Usage (CDN)
 
-The library automatically attaches to the global `window` object in browsers:
+IIFE build exposes a global `UldaSign`:
 
 ```html
+<!-- unpkg (latest) -->
 <script src="https://unpkg.com/@zeroam/ulda-sign/dist/ulda-sign.iife.js"></script>
+<!-- or pin a version -->
+<!-- <script src="https://unpkg.com/@zeroam/ulda-sign@1.x/dist/ulda-sign.iife.js"></script> -->
+
+<!-- jsDelivr alternative -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@zeroam/ulda-sign/dist/ulda-sign.iife.js"></script> -->
+
 <script>
   const ulda = new UldaSign();
   const origin = ulda.New();
+  // ...
 </script>
 ```
 
 ## Node.js Usage
 
 ```javascript
-const UldaSign = require('ulda-sign');
+// ESM
+import UldaSign from '@zeroam/ulda-sign';
+
+// CommonJS
+// const UldaSign = require('@zeroam/ulda-sign');
 
 const ulda = new UldaSign();
 const origin = ulda.New();
 ```
+
+## Related Packages
+
+- NPM (ulda): https://www.npmjs.com/package/ulda
+  - Install: `npm install @zeroam/ulda`
 
 ## Development
 
@@ -174,7 +188,7 @@ npm run dev
 
 ## License
 
-MIT
+This project is licensed under **ULDA-NC-1.0**. See the `LICENSE` file for details.
 
 ## Contributing
 

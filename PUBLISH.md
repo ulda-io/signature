@@ -39,19 +39,19 @@
 ## After Publishing
 
 The package will be available at:
-- NPM: https://www.npmjs.com/package/ulda-sign
-- CDN: https://unpkg.com/ulda-sign
+- NPM: https://www.npmjs.com/package/@zeroam/ulda-sign
+- CDN (unpkg): https://unpkg.com/@zeroam/ulda-sign
 
 ## Usage Examples
 
 ### ES Modules
 ```javascript
-import UldaSign from 'ulda-sign';
+import UldaSign from '@zeroam/ulda-sign';
 ```
 
 ### CommonJS
 ```javascript
-const UldaSign = require('ulda-sign');
+const UldaSign = require('@zeroam/ulda-sign');
 ```
 
 ### Browser (CDN)
@@ -61,5 +61,5 @@ const UldaSign = require('ulda-sign');
 
 ### TypeScript
 ```typescript
-import UldaSign, { UldaSignConfig } from 'ulda-sign';
+import UldaSign, { UldaSignConfig } from '@zeroam/ulda-sign';
 ```
